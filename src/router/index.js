@@ -3,6 +3,11 @@ import { createRouter, createWebHistory } from 'vue-router'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [{
+    path:'/inicio',
+    name:'inicio',
+    component:()=>import('../views/inicio.vue')
+  },
+  {
     path:'/almacen',
     name:'almacen',
     component:()=>import('../views/almacen.vue')
@@ -11,11 +16,6 @@ const router = createRouter({
     path:'/sucursales',
     name:'sucursales',
     component:()=>import('../views/sucursales.vue')
-  },
-  {
-    path:'/categorias',
-    name:'categorias',
-    component:()=>import('../views/categorias.vue')
   },
   {
     path:'/login',

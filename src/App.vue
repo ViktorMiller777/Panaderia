@@ -4,12 +4,13 @@
       <nav>
   <div>
       <ul>
-        <center><li><RouterLink class="rutas" to="/login"><img class="foto" src="/src/img/perfil.png" alt=""></RouterLink></li></center><br>
-        <center><li><RouterLink class="rutas" to="/almacen">Almacen</RouterLink></li></center><br>
-        <center><li><RouterLink class="rutas" to="/sucursales">Sucursales</RouterLink></li></center><br>
+        <center><li><RouterLink class="rutas" to="login"><img class="foto" src="/src/img/perfil.png" alt=""></RouterLink></li></center><br>
+        <center><li><RouterLink class="rutas" to="inicio">Inicio</RouterLink></li></center><br>
+        <center><li><RouterLink class="rutas" to="almacen">Almacen</RouterLink></li></center><br>
+        <center><li><RouterLink class="rutas" to="sucursales">Sucursales</RouterLink></li></center><br>
         <div class="select">
         <select name="format" id="format">
-            <option selected disabled>Categorias</option>
+            <option selected style="font-size: 18px;">Categorias</option>
             <option value="panimart">Panimart</option>
             <option value="coberturasmym">Coberturas MyM</option>
             <option value="materiasprimas">Materia Prima</option>
@@ -19,7 +20,6 @@
             <option value="productosdelimpieza">Productos de limpieza</option>
         </select>
     </div>
-        
       </ul>
   </div>
 </nav>
@@ -32,7 +32,7 @@
     </v-app-bar>
 
     <v-main>
-      <RouterView />
+      <RouterView/>
     </v-main>
   </v-app>
 </template>
@@ -62,10 +62,9 @@ height: 35px;
   text-decoration: none;
   margin: 40px;
   font-style: oblique;
-  color:black
+  color:black;
 }
-
- select {
+select {
     -webkit-appearance:none;
     -moz-appearance:none;
     -ms-appearance:none;
@@ -74,12 +73,11 @@ height: 35px;
     box-shadow:none;
     border:0!important;
     background: #5c6664;
-    background-image: none;
     flex: 1;
     padding: 0 .5em;
     color:black;
     cursor:pointer;
-    font-size: 1em;
+    font-size: 5px;
     font-family: 'Open Sans', sans-serif;
  }
  select::-ms-expand {
