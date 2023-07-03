@@ -26,7 +26,7 @@
 
     </v-navigation-drawer >
 
-    <v-app-bar style="background-color: orchid;">
+    <v-app-bar style="background-color: rgb(255, 125, 18);">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title >Lagupan</v-toolbar-title>
     </v-app-bar>
