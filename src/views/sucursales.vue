@@ -11,7 +11,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(sucursal, index) in sucursales" :key="sucursal.id">
+        <tr v-for="(sucursal, ) in sucursales" :key="sucursal.id">
           <td>{{ sucursal.nombre }}</td>
           <td>{{ sucursal.direccion }}</td>
           <td>{{ sucursal.telefono }}</td>
@@ -60,16 +60,16 @@ table {
 th, td {
   padding: 8px;
   text-align: left;
-  border-bottom: 1px solid #ba8cf7;
+  border-bottom: 1px solid #130921;
 }
 
 th {
-  background-color: #f2f2f2;
+  background-color: #fc4848;
 }
 
 .empty-row {
   text-align: center;
   font-style: italic;
-  color: #cf74c8;
+  color: #d758cc;
 }
 </style>

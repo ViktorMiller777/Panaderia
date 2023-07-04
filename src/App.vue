@@ -10,7 +10,7 @@
         <center><li><RouterLink class="rutas" to="sucursales">Sucursales</RouterLink></li></center><br>
         <div class="select">
         <select name="format" id="format">
-            <option selected style="font-size: 18px;">Categorias</option>
+            <option selected style="font-size: 18px;">Proveedores</option>
             <option value="panimart">Panimart</option>
             <option value="coberturasmym">Coberturas MyM</option>
             <option value="materiasprimas">Materia Prima</option>

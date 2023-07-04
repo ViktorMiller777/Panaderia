@@ -4,7 +4,7 @@
 </script>
 <template>
     <div>
-        <h1>Hola yo soy un pan concha</h1>
+        <h1>HELLO EVERYNYAM HOW ARE YOU, FINE THANK YOU :D</h1>
     </div>
 </template>
 <style scoped>
