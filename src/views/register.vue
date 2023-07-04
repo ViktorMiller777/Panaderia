@@ -7,8 +7,6 @@
             <center><div><input class="name" type="text" placeholder="email"></div></center><br>
             <center><div><input class="name" type="text" placeholder="passwd"></div></center><br>
             <p>Tus datos estan seguros en el baul de bolillo no te preocupes</p>
-            <p>¿No tienes una cuenta? Registrate aqui...<a style="font-size: 20px;" href="/register">Registrate</a></p>
-
         </div>
     </div>
 </template>

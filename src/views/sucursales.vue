@@ -1,29 +1,3 @@
-<template>
-  <div>
-    <h1>Sucursales</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Dirección</th>
-          <th>Teléfono</th>
-          <th>Empleado</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(sucursal, ) in sucursales" :key="sucursal.id">
-          <td>{{ sucursal.nombre }}</td>
-          <td>{{ sucursal.direccion }}</td>
-          <td>{{ sucursal.telefono }}</td>
-          <td>{{ sucursal.empleado }}</td>
-        </tr>
-        <tr v-if="!sucursales.length">
-          <td colspan="4" class="empty-row">No hay sucursales registradas</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</template>
 
 <script>
 export default {
@@ -51,6 +25,33 @@ export default {
 };
 </script>
 
+<template>
+  <div>
+    <h1>Sucursales</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Dirección</th>
+          <th>Teléfono</th>
+          <th>Empleado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(sucursal, ) in sucursales" :key="sucursal.id">
+          <td>{{ sucursal.nombre }}</td>
+          <td>{{ sucursal.direccion }}</td>
+          <td>{{ sucursal.telefono }}</td>
+          <td>{{ sucursal.empleado }}</td>
+        </tr>
+        <tr v-if="!sucursales.length">
+          <td colspan="4" class="empty-row">No hay sucursales registradas</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+
 <style>
 table {
   width: 100%;
@@ -64,7 +65,7 @@ th, td {
 }
 
 th {
-  background-color: #fc4848;
+  background-color: #ff5900;
 }
 
 .empty-row {

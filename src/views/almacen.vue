@@ -1,7 +1,21 @@
 <template>
+  
     <div>
         <h1>Productos</h1>
+        <div class="select">
+        <select name="format" id="format">
+            <option selected style="font-size: 18px;">Proveedores</option>
+            <option value="panimart">Panimart</option>
+            <option value="coberturasmym">Coberturas MyM</option>
+            <option value="materiasprimas">Materia Prima</option>
+            <option value="interventas">Interventas</option>
+            <option value="americandonuts">American Donuts</option>
+            <option value="pacasdepapel">Pacas de papel</option>
+            <option value="productosdelimpieza">Productos de limpieza</option>
+        </select>
+    </div><br>
         <table>
+          
       <thead>
         <tr>
           <th>Producto</th>

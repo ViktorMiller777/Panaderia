@@ -2,30 +2,16 @@
   <v-app id="inspire">
     <v-navigation-drawer v-model="drawer">
       <nav>
-  <div>
+  <div class="menu">
       <ul>
-        <center><li><RouterLink class="rutas" to="login"><img class="foto" src="/src/img/perfil.png" alt=""></RouterLink></li></center><br>
-        <center><li><RouterLink class="rutas" to="inicio">Inicio</RouterLink></li></center><br>
-        <center><li><RouterLink class="rutas" to="almacen">Almacen</RouterLink></li></center><br>
-        <center><li><RouterLink class="rutas" to="sucursales">Sucursales</RouterLink></li></center><br>
-        <div class="select">
-        <select name="format" id="format">
-            <option selected style="font-size: 18px;">Proveedores</option>
-            <option value="panimart">Panimart</option>
-            <option value="coberturasmym">Coberturas MyM</option>
-            <option value="materiasprimas">Materia Prima</option>
-            <option value="interventas">Interventas</option>
-            <option value="americandonuts">American Donuts</option>
-            <option value="pacasdepapel">Pacas de papel</option>
-            <option value="productosdelimpieza">Productos de limpieza</option>
-        </select>
-    </div>
+        <li><RouterLink class="rutas" to="login"><img class="perfil" src="/src/img/perfil.png" alt=""></RouterLink></li><br>
+        <li><img class="foto" src="/src/img/home.png" alt=""><RouterLink class="rutas" to="inicio">Inicio</RouterLink></li><br>
+        <li><img class="foto" src="/src/img/almacen.png" alt=""><RouterLink class="rutas" to="almacen">Almacen</RouterLink></li><br>
+        <li><img class="foto" src="/src/img/store.png" alt=""><RouterLink class="rutas" to="sucursales">Sucursales</RouterLink></li><br>
       </ul>
   </div>
 </nav>
-
     </v-navigation-drawer >
-
     <v-app-bar style="background-color: rgb(255, 125, 18);">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title >Lagupan</v-toolbar-title>
@@ -49,10 +35,16 @@
   }
 </script>
 <style>
-.barra{
+.menu{
+  display: flex;
+  padding: 16px;
+  list-style: none;
+}
+.barra
+{
   background-color: rgb(255, 207, 119);
 }
-.foto{
+.perfil{
 margin-left: 0px;
 width: 35px;
 height: 35px;
@@ -60,10 +52,9 @@ height: 35px;
 .rutas{
   font-size: 25px;
   text-decoration: none;
-  margin: 40px;
   font-style: oblique;
   color:black;
-}
+} 
 select {
     -webkit-appearance:none;
     -moz-appearance:none;
@@ -72,7 +63,7 @@ select {
     outline:0;
     box-shadow:none;
     border:0!important;
-    background: #5c6664;
+    background: #fca04a;
     flex: 1;
     padding: 0 .5em;
     color:black;
@@ -83,13 +74,16 @@ select {
  select::-ms-expand {
     display: none;
  }
+ li{
+  list-style: none;
+ }
  .select {
     position: relative;
     display: flex;
     width: 16em;
     height: 3em;
     line-height: 3;
-    background: #5c6664;
+    background:  rgb(255, 125, 18);
     overflow: hidden;
     border-radius: .25em;
  }
@@ -99,7 +93,7 @@ select {
     top: 0;
     right: 0;
     padding: 0 1em;
-    background: #2b2e2e;
+    background:#ff5900;
     cursor:pointer;
     pointer-events:none;
     transition:.25s all ease;
@@ -107,6 +101,11 @@ select {
  .select:hover::after {
     color:white;
  }
- 
+ .foto{
+  margin-right: 10px;
+  width: 27px;
+  height: 27px;
+
+ }
 
 </style>
