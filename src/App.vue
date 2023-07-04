@@ -1,6 +1,6 @@
 <template>
-  <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer">
+  <v-app  id="inspire">
+    <v-navigation-drawer style="background-color:rgb(255, 160, 52) ;" v-model="drawer">
       <nav>
   <div class="menu">
       <ul>
@@ -57,7 +57,7 @@ height: 35px;
 li:hover {
   background-color: rgb(255, 125, 18);
   transition: background-color .3s;
-  height: 37px;
+  height: 40px;
   width: 275px;
 }
 select {
