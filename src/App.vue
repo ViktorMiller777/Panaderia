@@ -15,9 +15,9 @@
       </v-sheet>
 <v-list>
   <v-list-item>
-    <li class="li"><img class="foto" src="/src/img/home.png" alt=""><RouterLink class="rutas" to="inicio">Inicio</RouterLink></li><br>
-    <li class="li"><img class="foto" src="/src/img/almacen.png" alt=""><RouterLink class="rutas" to="almacen">Almacen</RouterLink></li><br>
-    <li class="li"><img class="foto" src="/src/img/store.png" alt=""><RouterLink class="rutas" to="sucursales">Sucursales</RouterLink></li><br>
+    <v-btn style="width: 300px;"><li class="li"><img class="foto" src="/src/img/home.png" alt=""><RouterLink class="rutas" to="inicio">Inicio</RouterLink></li></v-btn><br><br>
+    <v-btn style="width: 300px;"><li class="li"><img class="foto" src="/src/img/almacen.png" alt=""><RouterLink class="rutas" to="almacen">Almacen</RouterLink></li></v-btn><br><br>
+    <v-btn style="width: 300px;"><li class="li"><img class="foto" src="/src/img/store.png" alt=""><RouterLink class="rutas" to="sucursales">Sucursales</RouterLink></li></v-btn><br><br>
   </v-list-item>
 </v-list>
  
@@ -82,6 +82,7 @@ width: 35px;
 height: 35px;
 }
 .rutas{
+ 
   font-size: 25px;
   text-decoration: none;
   font-style: oblique;
