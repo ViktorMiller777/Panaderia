@@ -2,7 +2,13 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [{
+  routes: [
+    {
+      path:'/login',
+      name:'login',
+      component:()=>import('../views/login.vue')
+    },
+  {
     path:'/inicio',
     name:'inicio',
     component:()=>import('../views/inicio.vue')
@@ -16,11 +22,6 @@ const router = createRouter({
     path:'/sucursales',
     name:'sucursales',
     component:()=>import('../views/sucursales.vue')
-  },
-  {
-    path:'/login',
-    name:'login',
-    component:()=>import('../views/login.vue')
   },
   {
     path:'/register',

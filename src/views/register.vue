@@ -3,7 +3,7 @@
 </script>
 <template><br>
 <center><v-span class="text-h5 font-weight-light">Registrar nuevo empleado</v-span></center>
-<form>
+<v-form>
 
    <v-row justify="center">
    
@@ -99,5 +99,5 @@
       </v-card>
     </v-col>
   </v-row>
-</form>
+</v-form>
 </template>
