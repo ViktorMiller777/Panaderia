@@ -9,7 +9,7 @@
         <li><img class="foto" src="/src/img/almacen.png" alt=""><RouterLink class="rutas" to="almacen">Almacen</RouterLink></li><br>
         <li><img class="foto" src="/src/img/store.png" alt=""><RouterLink class="rutas" to="sucursales">Sucursales</RouterLink></li><br>
       </ul>
-  </div>
+    </div>
 </nav>
     </v-navigation-drawer >
     <v-app-bar style="background-color: rgb(255, 125, 18);">
