@@ -1,6 +1,6 @@
 <template>
   <v-app  id="inspire">
-    <v-navigation-drawer style="background-color:rgb(255, 160, 52) ;" v-model="drawer">
+    <v-navigation-drawer style="background-color:rgb(255, 160, 52) ;" :rail="drawer">
       <nav>
   <div class="menu">
       <ul>
@@ -13,7 +13,7 @@
 </nav>
     </v-navigation-drawer >
     <v-app-bar style="background-color: rgb(255, 125, 18);">
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon  @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title >Lagupan</v-toolbar-title>
     </v-app-bar>
 
@@ -34,10 +34,19 @@
     data: () => ({ drawer: null }),
   }
 </script>
+
+
+<style >
+@import '../node_modules/typeface-roboto/index.css';
+</style>
+
+
 <style>
 .menu{
   display: flex;
   list-style: none;
+  display: none;
+  
 }
 .barra
 {
