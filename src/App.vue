@@ -74,6 +74,7 @@
 .menu{
   display: flex;
   list-style: none;
+  display: none;
 }
 .barra
 {
