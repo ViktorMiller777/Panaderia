@@ -26,7 +26,7 @@
     <v-app-bar style="background-color: rgb(255, 125, 18);">
       <v-app-bar-nav-icon  @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title >Lagupan</v-toolbar-title>
-      <div class="text-center">
+      <div style="padding: 15px;" class="text-center">
     <v-menu
       open-on-hover
     >
