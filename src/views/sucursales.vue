@@ -18,7 +18,13 @@ export default {
           telefono: '8717997718',
           empleado: 'María Gómez'
         },
-        // Agrega más sucursales aquí si lo deseas
+        {
+          id:3,
+          nombre:'Sucursal Matamoros',
+          direccion: 'Ciudad nazas #813 Col Arboledas',
+          telefono: '8717997718',
+          empleado: 'Roberto Lopez'
+        }
       ]
     };
   }

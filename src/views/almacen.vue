@@ -1,10 +1,15 @@
 <template>
   
     <div>
+      <v-btn class="btn">PRODUCTOS</v-btn>
+  <v-btn class="br">PROVEEDORES</v-btn>
+  <v-btn class="brt">ALMACENES</v-btn>
+  <v-btn class="btn">CONTACTO</v-btn>
         <h1>Productos</h1>
         <div class="select">
         <select name="format" id="format">
-            <option selected style="font-size: 18px;">Proveedores</option>
+            <option selected style="font-size: 18px;">Productos</option>
+            <option value="Proveedores">Proveedores</option>
             <option value="panimart">Panimart</option>
             <option value="coberturasmym">Coberturas MyM</option>
             <option value="materiasprimas">Materia Prima</option>
@@ -87,5 +92,14 @@ th {
   text-align: center;
   font-style: italic;
   color: #cf74c8;
+}
+.btn{
+  background-color: #ff5900;
+}
+.br{
+  background-color: #ff5900;
+}
+.brt{
+  background-color: #ff5900;
 }
 </style>
