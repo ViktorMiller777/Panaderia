@@ -2,6 +2,19 @@
   <v-app  id="inspire">
     <v-navigation-drawer style="background-color:rgb(255, 160, 52) ;" :rail="drawer">
       <nav>
+
+<<<<<<< HEAD
+  <div class="menu">
+      <ul>
+        <RouterLink to="login"><img class="perfil" src="/src/img/perfil.png" alt=""></RouterLink><br><br>
+        <li><img class="foto" src="/src/img/home.png" alt=""><RouterLink class="rutas" to="inicio">Inicio</RouterLink></li><br>
+        <li><img class="foto" src="/src/img/almacen.png" alt=""><RouterLink class="rutas" to="almacen">Almacen</RouterLink></li><br>
+        <li><img class="foto" src="/src/img/store.png" alt=""><RouterLink class="rutas" to="sucursales">Sucursales</RouterLink></li><br>
+      </ul>
+    </div>
+=======
+>>>>>>> 7a5eaf4083645e0e14b3d0ecc5ea9585e702c175
+
         <v-sheet
         color="grey-lighten-4"
         class="pa-4"
@@ -21,6 +34,7 @@
   </v-list-item>
 </v-list>
  
+
 </nav>
     </v-navigation-drawer >
     <v-app-bar style="background-color: rgb(255, 125, 18);">
@@ -40,8 +54,8 @@
       </template>
       <v-list>
         <v-list-item>
-          <RouterLink to="login" style="text-decoration: none;"><li>Inicar sesion</li></RouterLink>
-          <RouterLink to="register" style="text-decoration: none;"><li>Registar usuario</li></RouterLink>
+          <RouterLink to="login" style="text-decoration: none;"><li>Iniciar sesion</li></RouterLink>
+          <RouterLink to="register" style="text-decoration: none;"><li>Registrar usuario</li></RouterLink>
         </v-list-item>
       </v-list>
     </v-menu>
