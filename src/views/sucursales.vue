@@ -26,51 +26,79 @@ export default {
 </script>
 
 <template>
-  <div>
-    <h1>Sucursales</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Dirección</th>
-          <th>Teléfono</th>
-          <th>Empleado</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(sucursal, ) in sucursales" :key="sucursal.id">
-          <td>{{ sucursal.nombre }}</td>
-          <td>{{ sucursal.direccion }}</td>
-          <td>{{ sucursal.telefono }}</td>
-          <td>{{ sucursal.empleado }}</td>
-        </tr>
-        <tr v-if="!sucursales.length">
-          <td colspan="4" class="empty-row">No hay sucursales registradas</td>
-        </tr>
-      </tbody>
-    </table>
+
+    <center><h1>Sucursales Disponibles</h1></center>
+  <div class="cont-card1">
+    <center> <h3>Sucursal 1</h3></center>
+  <v-card id="suc1" 
+    class="mx-auto"
+    max-width="400"
+    color="orange"
+  >
+    <v-img
+      class="align-end text-white"
+      height="200"
+      src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+      cover
+    >
+      <v-card-title></v-card-title>
+    </v-img>
+
+    <v-card-subtitle class="pt-4">
+      Bromo
+    </v-card-subtitle>
+
+    <v-card-text>
+      <div>Bromo Av Siempre viva #987 col El Niño</div>
+
+      <div>8714253694</div>
+    </v-card-text>
+ 
+  </v-card>
   </div>
+  <br>
+  <br>
+  <div>
+    <center><h3>sucursal 2</h3></center>
+  <v-card id="suc2"
+    class="mx-auto"
+    max-width="400"
+    color="orange "
+  >
+    <v-img
+      class="align-end text-white"
+      height="200"
+      src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+      cover
+    >
+      <v-card-title></v-card-title>
+    </v-img>
+
+    <v-card-subtitle class="pt-4">
+      Juarez
+    </v-card-subtitle>
+
+    <v-card-text>
+      <div>Ciudad nazas #813 Col Arboledas</div>
+
+      <div>8717997718</div>
+    </v-card-text>
+
+   
+  </v-card>
+  </div>
+  
 </template>
 
 <style>
-table {
-  width: 100%;
-  border-collapse: collapse;
+.cont-card1{
+  padding-top: 20px;
+}
+#suc1{
+  border: 3px solid black;
 }
 
-th, td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #130921;
-}
-
-th {
-  background-color: #ff5900;
-}
-
-.empty-row {
-  text-align: center;
-  font-style: italic;
-  color: #d758cc;
+#suc2{
+  border: 3px solid black;
 }
 </style>

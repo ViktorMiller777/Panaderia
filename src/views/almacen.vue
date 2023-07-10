@@ -1,18 +1,34 @@
 <template>
   
+    <center><h1>Selecciona el proovedor</h1></center>
     <div>
-        <h1>Productos</h1>
-        <div class="select">
-        <select name="format" id="format">
-            <option selected style="font-size: 18px;">Proveedores</option>
-            <option value="panimart">Panimart</option>
-            <option value="coberturasmym">Coberturas MyM</option>
-            <option value="materiasprimas">Materia Prima</option>
-            <option value="interventas">Interventas</option>
-            <option value="americandonuts">American Donuts</option>
-            <option value="pacasdepapel">Pacas de papel</option>
-            <option value="productosdelimpieza">Productos de limpieza</option>
-        </select>
+      <v-container class="text-center">
+    <v-row justify="center">
+      <v-col cols="12" sm="6" md="4">
+        <v-btn block rounded="0" size="x-large">Panimart</v-btn>
+      </v-col>
+
+      <v-col cols="12" sm="6" md="4">
+        <v-btn block rounded="xs" size="x-large">coberturasmym</v-btn>
+      </v-col>
+
+      <v-col cols="12" sm="6" md="4">
+        <v-btn block rounded="sm" size="x-large">Materia Prima</v-btn>
+      </v-col>
+
+      <v-col cols="12" sm="6" md="4">
+        <v-btn block size="x-large">Interventas</v-btn>
+      </v-col>
+
+      <v-col cols="12" sm="6" md="4">
+        <v-btn block rounded="lg" size="x-large">American Donuts</v-btn>
+      </v-col>
+
+      <v-col cols="12" sm="6" md="4">
+        <v-btn block rounded="xl" size="x-large">Pacas de Papel</v-btn>
+      </v-col>
+    </v-row>
+  </v-container>
     </div><br>
         <table>
           
@@ -34,7 +50,7 @@
         </tr>
       </tbody>
     </table>
-  </div>
+  
 </template>
 
 <script>

@@ -3,12 +3,28 @@
 
 </script>
 <template>
-    <div>
-        <h1>HELLO EVERYNYAM HOW ARE YOU, FINE THANK YOU :D</h1>
+    <div class="cont-img">
+       <center><img id="lagu" src="/src/img/Logo.png" alt=""></center>
+
+       <center><h1>Bienvenido de nuevo ---</h1></center>
+       <br>
+       <br>
+
+       <center><h3>Selecciona el apartado que deseas ver</h3></center>
     </div>
     <div>
-        <img src="/src/img/rico.jpg" alt="">
+       
     </div>
 </template>
 <style scoped>
+
+.cont-img{
+    padding-top: 20px;
+}
+
+#lagu{
+    
+    border-radius: 10px;
+    border: 3px solid black;
+}
 </style>
