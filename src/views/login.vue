@@ -48,7 +48,7 @@
                               </h6>
                            </v-card-text>
                            <div class="text-center">
-                              <v-btn tile outlined dark @click="step++">Registrate</v-btn>
+                              <router-link to="/register"><v-btn tile outlined dark>Registrate</v-btn></router-link>
                            </div>
                         </div>
                      </v-col>
