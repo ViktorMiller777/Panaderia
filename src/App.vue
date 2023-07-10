@@ -43,8 +43,8 @@
       </template>
       <v-list>
         <v-list-item>
-          <RouterLink to="login" style="text-decoration: none;"><li>Inicar sesion</li></RouterLink>
-          <RouterLink to="register" style="text-decoration: none;"><li>Registar usuario</li></RouterLink>
+          <RouterLink to="login" style="text-decoration: none;"><li>Iniciar sesion</li></RouterLink>
+          <RouterLink to="register" style="text-decoration: none;"><li>Registrar usuario</li></RouterLink>
         </v-list-item>
       </v-list>
     </v-menu>
