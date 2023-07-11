@@ -1,39 +1,3 @@
-<<<<<<< HEAD
-
-<script>
-export default {
-  data() {
-    return {
-      sucursales: [
-        {
-          id: 1,
-          nombre: 'Sucursal Juarez',
-          direccion: 'Ciudad nazas #813 Col Arboledas',
-          telefono: '8717997718',
-          empleado: 'Juan Pérez'
-        },
-        {
-          id: 2,
-          nombre: 'Sucursal Revolucion',
-          direccion: 'Ciudad nazas #813 Col Arboledas',
-          telefono: '8717997718',
-          empleado: 'María Gómez'
-        },
-        {
-          id:3,
-          nombre:'Sucursal Matamoros',
-          direccion: 'Ciudad nazas #813 Col Arboledas',
-          telefono: '8717997718',
-          empleado: 'Roberto Lopez'
-        }
-      ]
-    };
-  }
-};
-</script>
-
-=======
->>>>>>> 7a5eaf4083645e0e14b3d0ecc5ea9585e702c175
 <template>
   <div>
     <h1>Sucursales</h1>

@@ -1,45 +1,11 @@
 <template>
   <v-app  id="inspire">
-    <v-navigation-drawer style="background-color:rgb(255, 160, 52) ;" :rail="drawer">
-      <nav>
 
-<<<<<<< HEAD
-  <div class="menu">
-      <ul>
-        <RouterLink to="login"><img class="perfil" src="/src/img/perfil.png" alt=""></RouterLink><br><br>
-        <li><img class="foto" src="/src/img/home.png" alt=""><RouterLink class="rutas" to="inicio">Inicio</RouterLink></li><br>
-        <li><img class="foto" src="/src/img/almacen.png" alt=""><RouterLink class="rutas" to="almacen">Almacen</RouterLink></li><br>
-        <li><img class="foto" src="/src/img/store.png" alt=""><RouterLink class="rutas" to="sucursales">Sucursales</RouterLink></li><br>
-      </ul>
-    </div>
-=======
->>>>>>> 7a5eaf4083645e0e14b3d0ecc5ea9585e702c175
-
-        <v-sheet
-        color="grey-lighten-4"
-        class="pa-4"
-      >
-        <v-avatar
-          class="mb-4"
-          color="grey-darken-1"
-          size="64"
-        ></v-avatar>
-        <div>bolillo@gmail.com</div>
-      </v-sheet>
-<v-list>
-  <v-list-item>
-    <v-btn style="width: 300px;"><li class="li"><img class="foto" src="/src/img/home.png" alt=""><RouterLink class="rutas" to="inicio">Inicio</RouterLink></li></v-btn><br><br>
-    <v-btn style="width: 300px;"><li class="li"><img class="foto" src="/src/img/almacen.png" alt=""><RouterLink class="rutas" to="almacen">Almacen</RouterLink></li></v-btn><br><br>
-    <v-btn style="width: 300px;"><li class="li"><img class="foto" src="/src/img/store.png" alt=""><RouterLink class="rutas" to="sucursales">Sucursales</RouterLink></li></v-btn><br><br>
-  </v-list-item>
-</v-list>
- 
-
-</nav>
-    </v-navigation-drawer >
     <v-app-bar style="background-color: rgb(255, 125, 18);">
-      <v-app-bar-nav-icon  @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title >Lagupan</v-toolbar-title>
+      <v-btn style="width: 300px;"><li class="li"><img class="foto" src="/src/img/home.png" alt=""><RouterLink class="rutas" to="inicio">Inicio</RouterLink></li></v-btn>
+      <v-btn style="width: 300px;"><li class="li"><img class="foto" src="/src/img/almacen.png" alt=""><RouterLink class="rutas" to="almacen">Almacen</RouterLink></li></v-btn>
+      <v-btn style="width: 300px;"><li class="li"><img class="foto" src="/src/img/store.png" alt=""><RouterLink class="rutas" to="sucursales">Sucursales</RouterLink></li></v-btn>
       <div style="padding: 15px;" class="text-center">
     <v-menu
       open-on-hover
@@ -54,8 +20,8 @@
       </template>
       <v-list>
         <v-list-item>
-          <RouterLink to="login" style="text-decoration: none;"><li>Iniciar sesion</li></RouterLink>
-          <RouterLink to="register" style="text-decoration: none;"><li>Registrar usuario</li></RouterLink>
+          <v-btn><RouterLink to="login" style="text-decoration: none;"><li>Iniciar sesion</li></RouterLink></v-btn><br>
+          <v-btn><RouterLink to="register" style="text-decoration: none;"><li>Registrar usuario</li></RouterLink></v-btn>
         </v-list-item>
       </v-list>
     </v-menu>
