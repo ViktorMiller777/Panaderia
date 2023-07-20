@@ -18,7 +18,18 @@
             <option value="pacasdepapel">Pacas de papel</option>
             <option value="productosdelimpieza">Productos de limpieza</option>
         </select>
-    </div><br>
+        
+    </div>
+    <v-col class="justy-center" cols="2" sm="6" md="4">
+       <v-row justify="center">
+      <RouterLink to="/pedido"><v-btn 
+        block rounded="xl" 
+        size="x-large" 
+        color="success">Pedir a Poroveedor</v-btn></RouterLink>
+       </v-row> 
+      </v-col>
+    
+    <br>
         <table>
           
       <thead>
