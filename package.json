@@ -10,6 +10,7 @@
   "dependencies": {
     "@mdi/js": "^7.2.96",
     "@mdi/react": "^1.6.1",
+    "axios": "^1.4.0",
     "pinia": "^2.1.4",
     "typeface-roboto": "^1.1.13",
     "vue": "^3.3.4",

@@ -12,13 +12,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="sucursal in sucursalesFiltradas" :key="sucursal.id">
+        <tr v-for="sucursal in sucursales" :key="sucursal.id">
           <td>{{ sucursal.nombre }}</td>
           <td>{{ sucursal.direccion }}</td>
           <td>{{ sucursal.telefono }}</td>
           <td>{{ sucursal.empleado }}</td>
         </tr>
-        <tr v-if="sucursalesFiltradas.length === 0">
+        <tr v-if="sucursales.length === 0">
           <td colspan="4">No se encontraron sucursales</td>
         </tr>
       </tbody>
@@ -26,46 +26,21 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      sucursales: [
-        {
-          id: 1,
-          nombre: 'Juarez',
-          direccion: 'Ciudad nazas #813 Col Arboledas',
-          telefono: '8717997718',
-          empleado: 'Juan Pérez'
-        },
-        {
-          id: 2,
-          nombre: 'Revolucion',
-          direccion: 'Ciudad nazas #813 Col Arboledas',
-          telefono: '8717997718',
-          empleado: 'María Gómez'
-        },
-        // Agrega más sucursales aquí si lo deseas
-      ],
-      filtro: ''
-    };
-  },
-  computed: {
-    sucursalesFiltradas() {
-      if (this.filtro === '') {
-        return [];
-      } else {
-        const filtroLower = this.filtro.toLowerCase();
-        return this.sucursales.filter(sucursal => {
-          return sucursal.nombre.toLowerCase().includes(filtroLower) ||
-                 sucursal.direccion.toLowerCase().includes(filtroLower) ||
-                 sucursal.telefono.toLowerCase().includes(filtroLower) ||
-                 sucursal.empleado.toLowerCase().includes(filtroLower);
-        });
-      }
-    }
+<script setup>
+import { onMounted, ref } from 'vue'
+import axios from 'axios'
+
+const sucursales = ref([])
+
+const fetchData = async() =>{
+  try{
+    const response = await axios.get('http://localhost/sucursales');
+    sucursales.value = response.data.data;
+  }catch(error){
+    console.log(error)
   }
-};
+}
+onMounted(fetchData)
 </script>
 
 <style>
