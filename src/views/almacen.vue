@@ -1,4 +1,3 @@
-
 <template>
   <div>
     <v-btn class="btn">PRODUCTOS</v-btn>
@@ -58,44 +57,44 @@ import axios from 'axios'
 const productos = ref([])
 
 const fetchData = async() =>{
-  try{
-    const response = await axios.get('http://localhost/productos');
-    productos.value = response.data.data;
-  }catch(error){
-    console.log(error)
-  }
+try{
+  const response = await axios.get('http://localhost/productos');
+  productos.value = response.data.data;
+}catch(error){
+  console.log(error)
+}
 }
 onMounted(fetchData)
 </script>
 
 <style scoped>
 table {
-  width: 100%;
-  border-collapse: collapse;
+width: 100%;
+border-collapse: collapse;
 }
 
 th, td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #401902;
+padding: 8px;
+text-align: left;
+border-bottom: 1px solid #401902;
 }
 
 th {
-  background-color: #ff5900;
+background-color: #ff5900;
 }
 
 .empty-row {
-  text-align: center;
-  font-style: italic;
-  color: #cf74c8;
+text-align: center;
+font-style: italic;
+color: #cf74c8;
 }
 .btn{
-  background-color: #ff5900;
+background-color: #ff5900;
 }
 .br{
-  background-color: #ff5900;
+background-color: #ff5900;
 }
 .brt{
-  background-color: #ff5900;
+background-color: #ff5900;
 }
 </style>
