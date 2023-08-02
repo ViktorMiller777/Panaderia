@@ -5,6 +5,7 @@
 <v-btn class="brt">ALMACENES</v-btn>
 <v-btn class="btn">CONTACTO</v-btn>
       <h1>Productos</h1>
+      <div class="botones">
       <div class="select">
       <select name="format" id="format">
           <option selected style="font-size: 18px;">Productos</option>
@@ -27,7 +28,7 @@
       color="success">Pedir a Proveedor</v-btn></RouterLink>
      </v-row> 
     </v-col>
-  <br>
+  </div><br>
       <table>
     <thead>
       <tr>
@@ -68,6 +69,10 @@ onMounted(fetchData)
 </script>
 
 <style scoped>
+.botones{
+  display: flex;
+  justify-content: space-between;
+}
 table {
 width: 100%;
 border-collapse: collapse;
