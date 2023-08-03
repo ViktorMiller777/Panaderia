@@ -1,5 +1,18 @@
 <script setup>
+import { onMounted, ref } from 'vue'
+import axios from 'axios'
 
+const empleados = ref([])
+
+const fetchData = async() =>{
+try{
+  const response = await axios.get('http://localhost/productos');
+  empleados.value = response.data.data;
+}catch(error){
+  console.log(error)
+}
+}
+onMounted(fetchData)
 </script>
 <template><br>
 <center><v-span class="text-h5 font-weight-light">Registrar nuevo empleado</v-span></center>

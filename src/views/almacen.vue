@@ -28,6 +28,14 @@
       color="success">Pedir a Proveedor</v-btn></RouterLink>
      </v-row> 
     </v-col>
+    <v-col class="justy-center" cols="2" sm="6" md="4">
+     <v-row justify="center">
+    <RouterLink to="/productos"><v-btn 
+      block rounded="xl" 
+      size="x-large" 
+      color="success">Ingresar Productos</v-btn></RouterLink>
+     </v-row> 
+    </v-col>
   </div><br>
       <table>
     <thead>
