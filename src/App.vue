@@ -5,8 +5,8 @@
       <v-toolbar-title >Lagupan</v-toolbar-title>
       <v-btn style="width: 300px;"><li class="li"><img class="foto" src="/src/img/home.png" alt=""><RouterLink class="rutas" to="inicio">Inicio</RouterLink></li></v-btn>
       <v-btn style="width: 300px;"><li class="li"><img class="foto" src="/src/img/almacen.png" alt=""><RouterLink class="rutas" to="almacen">Almacen</RouterLink></li></v-btn>
+      <v-btn style="width: 300px;"><li class="li"><img class="foto" src="/src/img/almacen.png" alt=""><RouterLink class="rutas" to="update">Update</RouterLink></li></v-btn>
       <v-btn style="width: 300px;"><li class="li"><img class="foto" src="/src/img/store.png" alt=""><RouterLink class="rutas" to="sucursales">Sucursales</RouterLink></li></v-btn>
-      <v-btn style="width: 300px;"><li class="li"><img class="foto" src="/src/img/almacen.png" alt=""><RouterLink class="rutas" to="productos">Productos</RouterLink></li></v-btn>
       <div style="padding: 15px;" class="text-center">
     <v-menu
       open-on-hover

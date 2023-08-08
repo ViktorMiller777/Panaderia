@@ -8,7 +8,6 @@
           <th>Nombre</th>
           <th>Dirección</th>
           <th>Teléfono</th>
-          <th>Empleado</th>
         </tr>
       </thead>
       <tbody>
@@ -16,7 +15,6 @@
           <td>{{ sucursal.nombre }}</td>
           <td>{{ sucursal.direccion }}</td>
           <td>{{ sucursal.telefono }}</td>
-          <td>{{ sucursal.empleado }}</td>
         </tr>
         <tr v-if="sucursales.length === 0">
           <td colspan="4">No se encontraron sucursales</td>

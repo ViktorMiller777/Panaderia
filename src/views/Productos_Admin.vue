@@ -29,7 +29,7 @@ const handleSubmit = async () => {
   
   try {
     
-    const response = await axios.post('http://localhost/producto', productData);
+    const response = await axios.post('http://localhost/productos', productData);
 
     
     console.log('Producto Agregado:', response.data);
