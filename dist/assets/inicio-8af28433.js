@@ -1,0 +1,1 @@
+import{_ as s,o as t,g as o,F as c,e}from"./index-68dcfe08.js";const n="/assets/rico-8a912985.jpg",a={},r=e("div",null,[e("h1",null,"HELLO EVERYNYAM HOW ARE YOU, FINE THANK YOU :D")],-1),_=e("div",null,[e("img",{src:n,alt:""})],-1);function i(l,d){return t(),o(c,null,[r,_],64)}const u=s(a,[["render",i]]);export{u as default};
