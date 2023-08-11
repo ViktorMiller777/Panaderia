@@ -2,75 +2,45 @@
   <v-container>
     <h2>Actualizar Producto</h2>
     <v-form @submit.prevent="actualizarProducto">
-      <v-row>
-        <v-col cols="12" sm="6">
-          <v-text-field v-model="producto.producto" label="Nombre del Producto"></v-text-field>
-        </v-col>
-        <v-col cols="12" sm="6">
-          <v-select v-model="producto.categoria" :items="categorias" item-text="categoria" item-value="id" label="Categoría"></v-select>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col cols="12" sm="6">
-          <v-text-field v-model="producto.existencias" label="Existencias" type="number"></v-text-field>
-        </v-col>
-      </v-row>
+          <v-text-field v-model="id" label="Ingresa el ID" required type="number"></v-text-field>
+          <v-text-field v-model="producto" label="Nombre del Producto" required></v-text-field>
+          <v-text-field v-model="categoria" type="number" label="Categoría" required></v-text-field>
+          <v-text-field v-model="existencias" label="Existencias" type="number" required></v-text-field>
       <v-btn type="submit" color="primary">Actualizar</v-btn>
     </v-form>
   </v-container>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router'; // Importa useRoute
-
+import { ref } from 'vue';
 import axios from 'axios';
 
-const producto = ref({
-  id: '',
-  producto: '',
-  categoria: '', // Asegúrate de que la categoría predeterminada esté en blanco
-  existencias: ''
-});
-
-const categorias = ref([]);
-
-const cargarDatosProducto = async () => {
-  try {
-    const route = useRoute('http://localhost/productos');
-    const productoId = route.params.id;
-    const response = await axios.get(`http://localhost/productos ${productoId}`);
-    producto.value = response.data.data;
-  } catch (error) {
-    console.error(error);
-  }
-};
-
-const cargarCategorias = async () => {
-  try {
-    const response = await axios.get('http://localhost/categorias');
-    categorias.value = response.data.data;
-  } catch (error) {
-    console.error(error);
-  }
-};
+const id = ref('');
+const producto = ref('');
+const categoria = ref('');
+const existencias = ref(0);
 
 const actualizarProducto = async () => {
+  const ProductData = {
+    producto: producto.value,
+    categoria: categoria.value,
+    existencias: existencias.value
+  };
   try {
-    const response = await axios.post(`'http://localhost/productos/actualizar' .${producto.value.id}`, producto.value);
-    // Manejo de éxito y redirección si es necesario
+
+    const response = await axios.post(`http://localhost/productosa/${id.value}`, ProductData);
+    console.log(ProductData);
+    
+    id.value = '';
+    producto.value = '';
+    categoria.value = '';
+    existencias.value = 0;
+
   } catch (error) {
-    console.error(error);
-    // Manejo de errores, muestra un mensaje de error si la actualización falla
+    console.error();
   }
 };
-
-onMounted(() => {
-  cargarCategorias();
-  cargarDatosProducto();
-});
 </script>
-
 
  <style scoped>
 .botones{
