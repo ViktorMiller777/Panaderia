@@ -28,7 +28,7 @@ const actualizarProducto = async () => {
   };
   try {
 
-    const response = await axios.post(`http://localhost/productosa/${id.value}`, ProductData);
+    const response = await axios.put(`http://localhost/productosa/${id.value}`, ProductData);
     console.log(ProductData);
     
     id.value = '';

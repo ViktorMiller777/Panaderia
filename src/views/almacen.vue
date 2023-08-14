@@ -37,6 +37,7 @@
      </v-row> 
     </v-col>
   </div><br>
+<div class="table-container">
       <table>
     <thead>
       <tr>
@@ -51,11 +52,9 @@
         <td>{{ productos.categoria }}</td>
         <td>{{ productos.existencias }}</td>
       </tr>
-      <tr v-if="!productos.length">
-        <td colspan="3" class="empty-row">No hay productos registrados</td>
-      </tr>
     </tbody>
   </table>
+</div>
 </div>
 </template>
 
@@ -80,6 +79,9 @@ onMounted(fetchData)
 .botones{
   display: flex;
   justify-content: space-between;
+}
+.select {
+  margin-bottom: 10px;
 }
 table {
 width: 100%;
@@ -109,5 +111,24 @@ background-color: #ff5900;
 }
 .brt{
 background-color: #ff5900;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+/* Estilos específicos para diferentes tamaños de pantalla */
+@media (min-width: 600px) {
+  .botones {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 600px) {
+  table {
+    font-size: 14px;
+  }
 }
 </style>
