@@ -13,6 +13,7 @@
               <v-text-field v-model="formData.password" label="Contraseña" type="password"></v-text-field>
               <v-text-field v-model="formData.confirmPassword" label="Confirmar Contraseña" type="password"></v-text-field>
               <v-btn type="submit" color="primary">Registrar</v-btn>
+              <v-btn ><RouterLink to="login" style="text-decoration: none;"><li>Iniciar sesion</li></RouterLink></v-btn>
             </v-form>
           </v-card-text>
         </v-card>
@@ -22,33 +23,40 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits, ref } from 'vue';
+import { ref } from 'vue';
 import axios from 'axios';
-import { useRouter } from 'vue-router';
 
-const emit = defineEmits();
-const { id,username,apellidopa,apellidoma, email, password, confirmPassword } = defineProps(['username', 'email', 'password', 'confirmPassword']);
-const formData = { id: id.value, username: nombre.value, apellidopa: apellidopa.value,apellidoma: '', email: '', password: '', confirmPassword: '' };
-
-
-  try {
-    const response = await axios.post('http://localhost/empleadosi', formData);
-  }catch(error){
-    console.error('Error al agregar producto:', error);
-  }
+const formData = ref({
+  username: '',
+  apellidopa: '',
+  apellidoma: '',
+  email: '',
+  password: '',
+  confirmPassword: ''
+});
 
 const register = async () => {
-  if (password !== confirmPassword) {
+  if (formData.password !== formData.confirmPassword) {
     alert('Las contraseñas no coinciden');
     return;
   }
 
-  // Emitir evento de registro exitoso
-  emit('registered');
+  const data = {
+    username: formData.username,
+    apellidopa: formData.apellidopa,
+    apellidoma: formData.apellidoma,
+    email: formData.email,
+    password: formData.password
+  };
 
-  alert('Registro exitoso');
+  try {
+    const response = await axios.post('http://localhost/empleadosi', data);
+    alert('Registro exitoso');
+  } catch (error) {
+    console.error('Error al agregar empleado:', error);
+    alert('Hubo un error al registrar el empleado');
+  }
 };
-
 </script>
 
 <style>

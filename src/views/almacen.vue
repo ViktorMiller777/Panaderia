@@ -52,45 +52,53 @@
         <td>{{ productos.categoria }}</td>
         <td>{{ productos.existencias }}</td>
       </tr>
+      <tr v-if="productos.length === 0">
+            <td colspan="3" class="empty-row">No hay productos registrados</td>
+      </tr>
     </tbody>
   </table>
-</div>
-</div>
-<div>
-    <h1>Entradas </h1>
-    <table>
-    <thead>
-      <tr>
+    </div>
+    <div class="table-container">
+      <h1>Entradas</h1>
+      <table>
+        <thead>
         <th>Detalles de compra</th>
         <th>Cantidad</th>
         <th>Fecha</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="productos in productos" :key="productos.id"></tr>
-      <tr v-if="!productos.length">
-        <td colspan="3" class="empty-row">No hay productos registrados</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+        </thead>
+        <tbody>
+          <tr v-for="entrada in entrada_matriz" :key="entrada.id">
+            <td>{{ entrada.detalle_orden_compra }}</td>
+            <td>{{ entrada.cantidad }}</td>
+            <td>{{ entrada.fecha }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
-import axios from 'axios'
+import { onMounted, ref } from 'vue';
+import axios from 'axios';
+// Import RouterLink from Vue Router
 
-const productos = ref([])
+const productos = ref([]);
+const entrada_matriz = ref([]);
 
-const fetchData = async() =>{
-try{
-  const response = await axios.get('http://localhost/productos');
-  productos.value = response.data.data;
-}catch(error){
-  console.log(error)
-}
-}
-onMounted(fetchData)
+const fetchData = async () => {
+  try {
+    const responseProductos = await axios.get('http://localhost/productos');
+    productos.value = responseProductos.data.data;
+
+    const responseEntrada = await axios.get('http://localhost/sumatriz');
+    entrada_matriz.value = responseEntrada.data.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+onMounted(fetchData);
 </script>
 
 <style scoped>
