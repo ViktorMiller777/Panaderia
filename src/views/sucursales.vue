@@ -22,6 +22,19 @@
       </tbody>
     </v-table>
   </div>
+  <div>
+      <h1>Entradas a Sucursal</h1>
+      <v-table class="sucursales-table">
+    <thead>
+      <th>Detalle de orden</th>
+      <th>Cantidad</th>
+      <th>Fecha</th>
+    </thead>
+    <tr v-if="sucursales.length === 0">
+          <td colspan="4">No se encontraron sucursales</td>
+        </tr>
+  </v-table>
+  </div>
 </template>
 
 <script setup>

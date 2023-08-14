@@ -56,6 +56,24 @@
   </table>
 </div>
 </div>
+<div>
+    <h1>Entradas </h1>
+    <table>
+    <thead>
+      <tr>
+        <th>Detalles de compra</th>
+        <th>Cantidad</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="productos in productos" :key="productos.id"></tr>
+      <tr v-if="!productos.length">
+        <td colspan="3" class="empty-row">No hay productos registrados</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 </template>
 
 <script setup>
