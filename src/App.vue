@@ -17,8 +17,8 @@
       </template>
       <v-list/>
         <v-list-item/>
-        <v-btn ><RouterLink to="login" style="text-decoration: none;"><li>Iniciar sesion</li></RouterLink></v-btn>
-        <v-btn v-if="isLoggedIn"><RouterLink to="login" @click="logout" style="width: 300px;">Cerrar Sesión</RouterLink></v-btn>
+        <v-btn v-if="!isLoggedIn"><RouterLink to="/login" style="text-decoration: none;"><li>Iniciar sesion</li></RouterLink></v-btn>
+        <v-btn v-if="isLoggedIn"><RouterLink to="/login" @click="logout" style="width: 300px;">Cerrar Sesión</RouterLink></v-btn>
         <v-btn><RouterLink to="register" style="text-decoration: none;"><li>Registrar usuario</li></RouterLink></v-btn>
       </v-app-bar>
     <v-main>
@@ -32,7 +32,7 @@ import { useRouter } from 'vue-router';
 
 export default {
   async mounted() {
-    await this.axios.get('/Empleados');
+    await this.axios.get('http://localhost/empleados');
     this.checkLocalStorage();
   },
   data: () => ({
@@ -77,7 +77,8 @@ export default {
     },
     async logout() {
       localStorage.removeItem('jwtToken'); // Elimina el token del localStorage
-      this.isLoggedIn = false; // Cambia el estado de inicio de sesión
+      this.isLoggedIn = false;
+      this.$router.push('/login'); // Cambia el estado de inicio de sesión
       // Aquí puedes agregar cualquier otra lógica de limpieza necesaria
     },
   },

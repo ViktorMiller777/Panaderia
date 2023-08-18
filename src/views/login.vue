@@ -10,9 +10,9 @@
                 <v-text-field v-model="correo" label="Usuario" required></v-text-field>
                 <v-text-field v-model="contrasena" label="Contraseña" type="password" required></v-text-field>
                 <v-btn type="submit" color="primary">Iniciar Sesión</v-btn>
-                <v-btn v-if="!isLoggedIn" to="/login" color="primary">Cerrar Sesión</v-btn>
+                <v-btn v-if="isLoggedIn" to="login" color="primary">Cerrar Sesión</v-btn>
                 <v-btn v-else @click="logout" color="primary">Cerrar Sesión</v-btn>
-                <v-btn to="/register" color="primary">Registrar usuario</v-btn>
+                <v-btn to="register" color="primary">Registrar usuario</v-btn>
               </v-form>
               <div v-if="errorMessage" class="error-message">{{ errorMessage }}</div>
             </v-card-text>
@@ -35,8 +35,25 @@ const contrasena = ref('');
 const errorMessage = ref('');
 let isLoggedIn = ref(false);
 
+const validateForm = () => {
+  errorMessage.value='Ingrese correctamente los datos';
+
+  if(!correo.value || !contrasena.value)
+  {
+    errorMessage.value = 'Por favor, completa todos los campos.';
+    return false;
+  }
+
+  return true;
+};
+
+
 const login = async () => {
   try {
+    if(!validateForm()){
+      return;
+    }
+    
     const response = await axios.post('http://localhost/login', {
       correo: correo.value,
       contrasena: contrasena.value
@@ -58,7 +75,7 @@ async function logout() {
   localStorage.removeItem('jwtToken'); // Elimina el token del localStorage
   isLoggedIn = false; // Cambia el estado de inicio de sesión
   // Aquí puedes agregar cualquier otra lógica de limpieza necesaria
-  router.push('/login'); // Redirigir a la página de inicio de sesión después del cierre de sesión
+  router.push('login'); // Redirigir a la página de inicio de sesión después del cierre de sesión
 }
 
 const checkLocalStorage = () => {

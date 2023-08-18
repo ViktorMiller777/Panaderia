@@ -5,14 +5,15 @@
         <v-card>
           <v-card-title class="text-center">Registro</v-card-title>
           <v-card-text>
-            <v-form @submit.prevent="register">
-              <v-text-field v-model="formData.username" label="Ingresa tu nombre"></v-text-field>
+            <v-form >
+              <v-text-field v-model="formData.nombre" label="Ingresa tu nombre"></v-text-field>
               <v-text-field v-model="formData.apellidopa" label="Apellido Paterno"></v-text-field>
               <v-text-field v-model="formData.apellidoma" label="Apellido Materno"></v-text-field>
-              <v-text-field v-model="formData.email" label="Correo Electrónico" type="email"></v-text-field>
-              <v-text-field v-model="formData.password" label="Contraseña" type="password"></v-text-field>
+              <v-text-field v-model="formData.correo" label="Correo Electrónico" type="email"></v-text-field>
+              <v-text-field v-model="formData.telefono" label="Ingrese su numero de telefono" type="number" ></v-text-field>
+              <v-text-field v-model="formData.contrasena" label="Contraseña" type="password"></v-text-field>
               <v-text-field v-model="formData.confirmPassword" label="Confirmar Contraseña" type="password"></v-text-field>
-              <v-btn type="submit" color="primary">Registrar</v-btn>
+              <v-btn @click.prevent="register" color="primary">Registrar</v-btn>
               <v-btn ><RouterLink to="login" style="text-decoration: none;"><li>Iniciar sesion</li></RouterLink></v-btn>
             </v-form>
           </v-card-text>
@@ -25,39 +26,56 @@
 <script setup>
 import { ref } from 'vue';
 import axios from 'axios';
+import { RouterLink } from 'vue-router';
 
 const formData = ref({
-  username: '',
+  id:'',
+  nombre: '',
   apellidopa: '',
   apellidoma: '',
-  email: '',
-  password: '',
+  correo: '',
+  telefono:'',
+  tipo_user:"1",
+  contrasena: '',
   confirmPassword: ''
 });
 
+const errorMessage = ref('');
+
+const validateForm = () => {
+  errorMessage.value = 'Ingresa todos los datos'; // Restablece el mensaje de error
+
+  if (!formData.nombre || !formData.apellidopa || !formData.apellidoma || !formData.telefono || !formData.correo || !formData.contrasena || !formData.confirmPassword) {
+    errorMessage.value = 'Por favor, completa todos los campos.';
+    return false;
+  }
+
+  return true;
+};
+
 const register = async () => {
-  if (formData.password !== formData.confirmPassword) {
+  if (formData.contrasena !== formData.confirmPassword) {
     alert('Las contraseñas no coinciden');
     return;
   }
 
-  const data = {
-    username: formData.username,
-    apellidopa: formData.apellidopa,
-    apellidoma: formData.apellidoma,
-    email: formData.email,
-    password: formData.password
-  };
-
   try {
-    const response = await axios.post('http://localhost/empleadosi', data);
+    if (!validateForm()) {
+      return;
+    }
+
+
+    const response = await axios.post('http://localhost/empleadosi', formData);
+    console.log(formData);
     alert('Registro exitoso');
   } catch (error) {
     console.error('Error al agregar empleado:', error);
     alert('Hubo un error al registrar el empleado');
+    console.log(error.response);
   }
 };
 </script>
+
 
 <style>
 .text-center {

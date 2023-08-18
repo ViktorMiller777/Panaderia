@@ -88,7 +88,7 @@ const entrada_matriz = ref([]);
 
 const fetchData = async () => {
   try {
-    const responseProductos = await axios.get('http://localhost/productos');
+    const responseProductos = await axios.get('http://localhost/productosv');
     productos.value = responseProductos.data.data;
 
     const responseEntrada = await axios.get('http://localhost/sumatriz');
