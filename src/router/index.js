@@ -64,6 +64,11 @@ const routes = [
     component: () => import('../views/Productos_Alterar.vue'),
     meta: { requireAuth: true },
   },
+  {
+    path:'/aggsucu',
+    name:'aggsucu',
+    component:()=> import('../views/sucursales_Admin.vue'),
+  },
 ];
 
 const router = createRouter({

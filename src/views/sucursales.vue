@@ -1,6 +1,12 @@
 <template>
   <div>
-    <h1>Sucursales</h1>
+    <div class="boton">
+      <h1>Sucursales</h1>
+      <div>
+        <RouterLink to="/aggsucu"><v-btn 
+      color="success">Agregar Sucursal</v-btn></RouterLink>
+      </div>
+    </div>
     <input type="text" v-model="filtro" placeholder="Filtrar sucursales">
     <v-table class="sucursales-table">
       <thead>
@@ -55,6 +61,12 @@ onMounted(fetchData)
 </script>
 
 <style>
+.boton{
+  display: flex;
+  justify-content: space-between;
+  margin-left:30px;
+  margin-top:30px;
+}
 .sucursales-table {
   width: 100%;
   border-collapse:collapse;
