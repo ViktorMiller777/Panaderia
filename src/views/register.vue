@@ -5,7 +5,7 @@
         <v-card>
           <v-card-title class="text-center">Registro</v-card-title>
           <v-card-text>
-            <v-form >
+            <v-form @submit.prevent="register">
               <v-text-field v-model="formData.nombre" label="Ingresa tu nombre"></v-text-field>
               <v-text-field v-model="formData.apellidopa" label="Apellido Paterno"></v-text-field>
               <v-text-field v-model="formData.apellidoma" label="Apellido Materno"></v-text-field>
@@ -13,7 +13,7 @@
               <v-text-field v-model="formData.telefono" label="Ingrese su numero de telefono" type="number" ></v-text-field>
               <v-text-field v-model="formData.contrasena" label="Contraseña" type="password"></v-text-field>
               <v-text-field v-model="formData.confirmPassword" label="Confirmar Contraseña" type="password"></v-text-field>
-              <v-btn @click.prevent="register" color="primary">Registrar</v-btn>
+              <v-btn type="submit" color="primary">Registrar</v-btn>
               <v-btn ><RouterLink to="login" style="text-decoration: none;"><li>Iniciar sesion</li></RouterLink></v-btn>
             </v-form>
           </v-card-text>
@@ -35,7 +35,7 @@ const formData = ref({
   apellidoma: '',
   correo: '',
   telefono:'',
-  tipo_user:"1",
+  tipo_user:'1',
   contrasena: '',
   confirmPassword: ''
 });
@@ -64,9 +64,7 @@ const register = async () => {
       return;
     }
 
-
-    const response = await axios.post('http://localhost/empleadosi', formData);
-    console.log(formData);
+    const response = await axios.post('http://localhost/empleadosin', formData);
     alert('Registro exitoso');
   } catch (error) {
     console.error('Error al agregar empleado:', error);

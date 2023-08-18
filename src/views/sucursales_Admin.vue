@@ -1,14 +1,36 @@
+<template>
+    <v-container>
+   <v-card>
+     <v-card-title>Registro de sucursales</v-card-title>
+     <v-form @submit.prevent="handleSubmit">
+       <v-text-field v-model="nombre" label="Nombre de la sucursal" required></v-text-field>
+       <v-text-field v-model="direccion" label="Direccion" required></v-text-field>
+       <v-text-field v-model="telefono" label="Telefono" type="number" required></v-text-field>
+       <v-btn type="submit" color="primary">Registrar sucursal</v-btn>
+       <v-alert :color="color" :type="type" :title="title" :text="text" v-if="showAlert"></v-alert>
+     </v-form>
+   </v-card>
+ </v-container>
+</template>
+
 <script setup>
 import {ref} from 'vue';
 import axios from 'axios';
-const sucursal=ref();
-const direccion=ref();
-const telefono=ref();
+
+const id=ref('');
+const nombre=ref('');
+const direccion=ref('');
+const telefono=ref('');
+
+const title = ref('');
+const text = ref('');
+const color = ref('');
+const type = ref('');
+
 const showAlert = ref(false);
 
 const handleSubmit = async () => {
-  if (!sucursal.value || !direccion.value || !telefono.value) {
-    // If any of the fields are empty, show an error alert
+  if (!nombre.value || !direccion.value || !telefono.value) {
     title.value = 'Error';
     text.value = 'Por favor, complete todos los campos.';
     color.value = 'error';
@@ -24,14 +46,13 @@ const handleSubmit = async () => {
 
   const sucuData = {
     id: id.value,
-    sucursal: sucursal.value,
+    nombre: nombre.value,
     direccion: direccion.value,
     telefono: telefono.value
   };
   
   try {
-    const response = await axios.post('URL', sucuData);
-
+    const response = await axios.post('http://localhost/sucursalesi', sucuData);
     title.value = 'Registro Exitoso';
     text.value = 'Sucursal agregada con éxito.';
     color.value = 'success';
@@ -43,8 +64,8 @@ const handleSubmit = async () => {
     }, 5000);
 
     id.value='null';
-    sucursal.value = '';
-    direccion.value = '0';
+    nombre.value = '';
+    direccion.value = '';
     telefono.value = 0;
   } catch (error) {
     title.value = 'Error';
@@ -57,19 +78,5 @@ const handleSubmit = async () => {
   }
 };
 </script>
-<template>
-     <v-container>
-    <v-card>
-      <v-card-title>Registro de sucursales</v-card-title>
-      <v-form @submit.prevent="handleSubmit">
-        <v-text-field v-model="sucursal" label="Nombre de la sucursal" required></v-text-field>
-        <v-text-field v-model="direccion" label="Direccion" type="number" required></v-text-field>
-        <v-text-field v-model="telefono" label="Telefono" type="number" required></v-text-field>
-        <v-btn type="submit" color="primary">Registrar sucursal</v-btn>
-        <v-alert :color="color" :type="type" :title="title" :text="text" v-if="showAlert"></v-alert>
-      </v-form>
-    </v-card>
-  </v-container>
-</template>
 <style scoped>
 </style>

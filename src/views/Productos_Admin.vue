@@ -54,7 +54,6 @@ const handleSubmit = async () => {
   
   try {
     const response = await axios.post('http://localhost/productosi', productData);
-
     title.value = 'Registro Exitoso';
     text.value = 'Producto agregado con éxito.';
     color.value = 'success';
