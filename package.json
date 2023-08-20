@@ -10,7 +10,12 @@
   "dependencies": {
     "@mdi/js": "^7.2.96",
     "@mdi/react": "^1.6.1",
+    "aws-sdk": "^2.1440.0",
     "axios": "^1.4.0",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "mock-aws-s3": "^4.0.2",
+    "nock": "^13.3.3",
     "pinia": "^2.1.6",
     "typeface-roboto": "^1.1.13",
     "vue": "^3.2.36",
