@@ -26,33 +26,40 @@
           <td colspan="4">No se encontraron sucursales</td>
         </tr>
       </tbody>
-    </v-table>
-  </div>
-  <div>
-      <h1>Entradas a Sucursal</h1>
-      <v-table class="sucursales-table">
-    <thead>
-      <th>Detalle de orden</th>
-      <th>Cantidad</th>
-      <th>Fecha</th>
-    </thead>
-    <tr v-if="sucursales.length === 0">
-          <td colspan="4">No se encontraron sucursales</td>
-        </tr>
-  </v-table>
-  </div>
+      </v-table>
+      </div>
+  <div class="table-container">
+      <h1>Entradas</h1>
+      <table>
+        <thead>
+        <th>Detalles de salidas</th>
+        <th>Cantidad</th>
+        <th>Fecha</th>
+        </thead>
+        <tbody>
+          <tr v-for="entrada in entrada_sucursal" :key="entrada.id">
+            <td>{{ entrada.detalle_orden_salida }}</td>
+            <td>{{ entrada.cantidad }}</td>
+            <td>{{ entrada.fecha }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 </template>
-
 <script setup>
 import { onMounted, ref } from 'vue'
 import axios from 'axios'
 
-const sucursales = ref([])
+const sucursales = ref([]);
+const entrada_sucursal = ref([]);
 
 const fetchData = async() =>{
   try{
     const response = await axios.get('http://localhost/sucursales');
     sucursales.value = response.data.data;
+
+    const responseEntrada = await axios.get('http://localhost/susucursal');
+    entrada_sucursal.value = responseEntrada.data.data;
   }catch(error){
     console.log(error)
   }
